@@ -10,9 +10,11 @@ typedef struct {
 
 //}Œ`‚Ì‘ÌÏ‚ğŒvZ
 double calculateVolume(Shape s) {
-	switch (s) {
-	
-	default:
+	switch (s.syurui) {
+	case 'R':return s.height * s.width * s.depth;
+	case 'P':return s.width * s.depth * s.height / 3;
+	case 'T':return s.width * s.depth * s.height / 6;
+	default: 
 		return 0.0;
 	}
 }
@@ -30,5 +32,10 @@ int main() {
 	for (int i = 0; i < 5; i++) {
 		printf("í—Ş: %c,H: %.1lf, W: %.1lf, D:%.1lf\n", shape[i].syurui, shape[i].height, shape[i].width, shape[i].depth);
 	}
+
+	//printShapes
+	int inputID;
+	double volume;
+
 
 }
