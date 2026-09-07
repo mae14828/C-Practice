@@ -44,8 +44,10 @@ int main() {
 		printf("プログラムを終了します。\n");
 		return 0;
 	}
-	volume=
+	volume = calculateVolume(shape[inputID]);
+
+	printf("ID %dの体積（図形：%c）は%.2lfです。\n", inputID, shape[inputID].syurui, volume);
 
 	}
-
+	return 0;
 }
