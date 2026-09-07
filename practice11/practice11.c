@@ -33,9 +33,19 @@ int main() {
 		printf("種類: %c,H: %.1lf, W: %.1lf, D:%.1lf\n", shape[i].syurui, shape[i].height, shape[i].width, shape[i].depth);
 	}
 
-	//printShapes
 	int inputID;
 	double volume;
 
+	while(1){
+	printf("\n図形のIDを入力してください（0～4以外で終了）:");
+	scanf("%d", &inputID);
+
+	if (inputID < 0 || inputID>4) {
+		printf("プログラムを終了します。\n");
+		return 0;
+	}
+	volume=
+
+	}
 
 }
