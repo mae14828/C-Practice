@@ -3,29 +3,26 @@
 #include<stdio.h>
 #define NUM 10
 
-int max(int array[]);
+void maxCulc(int array[], int* max);
 
 int main() {
 	int data[NUM];
+	int max;
 	printf("%d個の数字を入力：\n",NUM);
 	for (int i = 0; i < NUM; i++) {
 		scanf("%d", &data[i]);
 	}
-	max(data);
+	maxCulc(data, &max);
+	printf("最大値は%d\n", max);
 
 	return 0;
 }
 
-int max(int array[]) {
-	for (int i = 0; i < NUM-1; i++) {
-		for (int j = 0 ; j < NUM-i-1; j++) {
-			if (array[j] < array[j + 1]) {
-				int tmp = array[j];
-				array[j] = array[j + 1];
-				array[j + 1] = tmp;
-			}
+void maxCulc(int array[], int* max) {
+	*max = *array; //*arrayはarray[0]と同義
+	for (int i = 1; i < NUM ; i++) {
+		if (*max < *(array + i)) {
+			*max = *(array + i); //*(array+i)はarray[i]と同義
 		}
 	}
-	printf("最大値は%d\n",array[0]);
-	return 0;
 }
