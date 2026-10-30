@@ -4,7 +4,8 @@
 int main() {
 	int* p;
 	int num;
-	p = &num;
+
+	*p = &num;
 	*p = 10;
 
 	printf("&num=%p\n", &num);
